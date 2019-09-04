@@ -77,15 +77,18 @@ filetype plugin indent on	" required
 syntax enable
 
 " solarized
-let g:solarized_termcolors=256
+"
+set t_Co=256
 set background=dark
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1 
 colorscheme solarized
 
 "set background=dark
 "colorscheme evening
 
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight nonText ctermbg=NONE
 
 
 
