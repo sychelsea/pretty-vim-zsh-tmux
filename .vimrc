@@ -28,7 +28,7 @@ set ts=4
 set expandtab
 
 " Hightlight the 80th column
-high ColorColumn ctermbg = gray
+"high ColorColumn ctermbg=236 guibg=#FFFFFF
 set colorcolumn=80
 
 " Hightlight current line
@@ -49,6 +49,10 @@ Plugin 'gmarik/Vundle.vim'	" required
 " Plugin begins here.
 " Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'tomasr/molokai'
+Plugin 'fmoralesc/molokayo'
+Plugin 'rakr/vim-one'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline-fonts'
@@ -75,21 +79,50 @@ filetype plugin indent on	" required
 "===============================================================================
 
 syntax enable
-
-" solarized
-"
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans = 1 
-colorscheme solarized
+
+
+" solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans = 1
+"colorscheme solarized
+
+" PaperColor
+"set termguicolors
+colorscheme PaperColor 
+
+" Molokaic
+"let g:molokai_original = 1
+"colorscheme molokai
+
+" One
+"set termguicolors
+"let g:one_allow_italics = 1 " Enable italic for comments
+"colorscheme one
 
 "set background=dark
 "colorscheme evening
 
-"highlight Normal ctermbg=NONE
-"highlight nonText ctermbg=NONE
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
+
+"===============================================================================
+" Airline
+"===============================================================================
+
+" Enable powerline fonts
+let g:airline_powerline_fonts = 1
+
+" Enable smarter tab line
+"let g:airline#extensions#tabline#enable = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = "|"
+
+" Set airline color theme
+" light
+let g:airline_theme='one'
 
 
 
