@@ -89,7 +89,26 @@ set background=dark
 "colorscheme solarized
 
 " PaperColor
-"set termguicolors
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1,
+  \       'allow_bold': 1,
+  \       'allow_italic': 1
+  \     }
+  \   },
+  \   'language': {
+  \     'python': {
+  \       'highlight_builtins' : 1
+  \     },
+  \     'cpp': {
+  \       'highlight_standard_library': 1
+  \     },
+  \     'c': {
+  \       'highlight_builtins' : 1
+  \     }
+  \   }
+  \ }
 colorscheme PaperColor 
 
 " Molokaic
@@ -104,8 +123,8 @@ colorscheme PaperColor
 "set background=dark
 "colorscheme evening
 
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight nonText ctermbg=NONE
 
 
 "===============================================================================
@@ -121,8 +140,8 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#left_alt_sep = "|"
 
 " Set airline color theme
-" light
-let g:airline_theme='one'
+" light, one, wombat
+let g:airline_theme='powerlineish'
 
 
 
