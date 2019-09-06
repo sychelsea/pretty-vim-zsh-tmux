@@ -47,17 +47,25 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'	" required
 
 " Plugin begins here.
-" Plugin 'flazz/vim-colorschemes'
+
+" Color themes
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'tomasr/molokai'
 Plugin 'fmoralesc/molokayo'
 Plugin 'rakr/vim-one'
+
+" Airline and its color themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline-fonts'
+
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+
+" Auto complete
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'davidhalter/jedi-vim'
 
 " All of Plugins must be added before the following line
 call vundle#end()		" required
@@ -150,7 +158,7 @@ let g:airline_theme='powerlineish'
 "===============================================================================
 
 " Open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 
 " Open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
@@ -162,3 +170,21 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " Exit NERDTree if there is only one window opened in vim
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Show hideen files
+let NETDTreeShowHidden=1
+
+" Open/close NERDTree by <Enter>
+:nnoremap <Enter> :NERDTreeToggle<CR><C-w><C-w> 
+
+
+
+
+"===============================================================================
+" JavaComplete2
+"===============================================================================
+" Required
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+" Disable default mappings
+let g:JavaComplete_EnableDefaultMappings = 0
