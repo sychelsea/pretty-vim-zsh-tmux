@@ -14,8 +14,6 @@ set autoread
 " Hieght of command bar
 "set cmdheight=2
 
-" Hightlight search results
-set hlsearch
 
 " ????
 set magic
@@ -23,9 +21,13 @@ set magic
 " Show matching brackets
 set showmatch
 
-" Set tab to 4 spaces. 'ts' means tabstop.
-set ts=4
+" Set tab to 4 spaces. 
+set ts=4            " tab stop
+set shiftwidth=4    " shift width
+set softtabstop=4
 set expandtab
+
+" Set shift width to 4 spaces.
 
 " Hightlight the 80th column
 "high ColorColumn ctermbg=236 guibg=#FFFFFF
@@ -33,6 +35,22 @@ set colorcolumn=80
 
 " Hightlight current line
 set cursorline
+
+
+"===============================================================================
+" Search
+"===============================================================================
+
+" Hightlight search results
+set hlsearch
+
+" Show matches online when typing searching pattern
+set incsearch
+
+" Be smart about cases
+set ignorecase
+set smartcase
+
 
 "===============================================================================
 " Vundle Plugins
@@ -61,6 +79,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline-fonts'
 
 Plugin 'scrooloose/nerdtree'
+Plugin 'Yggdroot/indentLine'
 
 " Auto complete
 Plugin 'ycm-core/YouCompleteMe'
@@ -71,7 +90,7 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()		" required
 filetype plugin indent on	" required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 
 
 " Brief help
@@ -91,7 +110,7 @@ set t_Co=256
 set background=dark
 
 
-" solarized
+" Solarized
 "let g:solarized_termcolors=256
 "let g:solarized_termtrans = 1
 "colorscheme solarized
@@ -117,7 +136,7 @@ let g:PaperColor_Theme_Options = {
   \     }
   \   }
   \ }
-colorscheme PaperColor 
+colorscheme PaperColor
 
 " Molokaic
 "let g:molokai_original = 1
@@ -131,8 +150,12 @@ colorscheme PaperColor
 "set background=dark
 "colorscheme evening
 
+" If there is trouble showing the background color, uncomment following lines.
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
+
+" Change search highlight color to light yellow
+hi Search ctermbg=227
 
 
 "===============================================================================
@@ -142,16 +165,9 @@ colorscheme PaperColor
 " Enable powerline fonts
 let g:airline_powerline_fonts = 1
 
-" Enable smarter tab line
-"let g:airline#extensions#tabline#enable = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = "|"
-
 " Set airline color theme
 " light, one, wombat
 let g:airline_theme='powerlineish'
-
-
 
 "===============================================================================
 " NERDTree
@@ -171,14 +187,11 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Exit NERDTree if there is only one window opened in vim
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Show hideen files
+" Show hidden files
 let NETDTreeShowHidden=1
 
 " Open/close NERDTree by <Enter>
 :nnoremap <Enter> :NERDTreeToggle<CR><C-w><C-w> 
-
-
-
 
 "===============================================================================
 " JavaComplete2
