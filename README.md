@@ -5,15 +5,15 @@ It enable the most of basic functions and help you to install some useful Plugin
 
 It uses [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) to manage vim plugins. 
 ## Puglins contained
-- [NLKNguyen/papercolor-theme]()
-- [vim-airline/vim-airline]()
-- [vim-airline/vim-airline-themes]()
-- [powerline/powerline-fonts]()
-- [scrooloose/nerdtree]()
-- [ggdroot/indentLine]()
-- [ycm-core/YouCompleteMe]()
-- [artur-shaik/vim-javacomplete2]()
-- [davidhalter/jedi-vim]()
+- [NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
+- [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- [powerline/powerline-fonts](https://github.com/powerline/fonts)
+- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+- [ggdroot/indentLine](https://github.com/Yggdroot/indentLine)
+- [ycm-core/YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)
+- [artur-shaik/vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2)
+- [davidhalter/jedi-vim](https://github.com/davidhalter/jedi-vim)
 
 # Quick Start
 
