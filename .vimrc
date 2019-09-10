@@ -67,11 +67,7 @@ Plugin 'gmarik/Vundle.vim'	" required
 " Plugin begins here.
 
 " Color themes
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'tomasr/molokai'
-Plugin 'fmoralesc/molokayo'
-Plugin 'rakr/vim-one'
 
 " Airline and its color themes
 Plugin 'vim-airline/vim-airline'
@@ -90,7 +86,7 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()		" required
 filetype plugin indent on	" required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+" filetype plugin on
 
 
 " Brief help
@@ -108,12 +104,6 @@ filetype plugin on
 syntax enable
 set t_Co=256
 set background=dark
-
-
-" Solarized
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans = 1
-"colorscheme solarized
 
 " PaperColor
 let g:PaperColor_Theme_Options = {
@@ -138,25 +128,12 @@ let g:PaperColor_Theme_Options = {
   \ }
 colorscheme PaperColor
 
-" Molokaic
-"let g:molokai_original = 1
-"colorscheme molokai
-
-" One
-"set termguicolors
-"let g:one_allow_italics = 1 " Enable italic for comments
-"colorscheme one
-
-"set background=dark
-"colorscheme evening
-
 " If there is trouble showing the background color, uncomment following lines.
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
 
 " Change search highlight color to light yellow
 hi Search ctermbg=227
-
 
 "===============================================================================
 " Airline
