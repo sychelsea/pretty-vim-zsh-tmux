@@ -86,7 +86,7 @@ set smartcase
 " Vundle Plugins
 "===============================================================================
 
-set nocompatible	" requiredgetCNNModel, e
+set nocompatible	" required
 filetype off		" required
 
 set rtp+=~/.vim/bundle/Vundle.vim
