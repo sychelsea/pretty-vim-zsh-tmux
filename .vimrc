@@ -1,16 +1,20 @@
 "===============================================================================
 " Hotkeys
 "===============================================================================
-" open/close nerdtree       Enter
-" enable/disable folding    zi
-" open folding              zo / Space
-" close folding             zc
+" open/close nerdtree                   Enter
+" search                                Ctrl f
+" enable/disable folding (default)      zi
+" open folding (default)                zo / Space
+" close folding (default)               zc
+
 
 "===============================================================================
 " General
 "===============================================================================
+" Note: All the color configurations must be set after colorscheme
 
 " Enable mouse
+set ttymouse=xterm2 " make it works with tmux
 set mouse=a
 
 " Show line number
@@ -19,7 +23,7 @@ set number
 " Auto read when a file is changed from the outside
 set autoread
 
-" ????
+" Set regex model as magic
 set magic
 
 " Show matching brackets
@@ -32,7 +36,6 @@ set softtabstop=4
 set expandtab
 
 " Hightlight the 80th column
-"high ColorColumn ctermbg=236 guibg=#FFFFFF
 set colorcolumn=80
 
 " Hightlight current line
@@ -200,8 +203,11 @@ colorscheme PaperColor
 " Change search highlight color to light yellow
 hi Search ctermbg=227
 " Change the color of folding rows columns
-highlight Folded ctermbg=Black ctermfg=147
-highlight FoldColumn ctermbg=Black ctermfg=147
+hi Folded ctermbg=Black ctermfg=147
+hi FoldColumn ctermbg=Black ctermfg=147
+
+"high ColorColumn ctermbg=236 guibg=#FFFFFF
+
 
 
 "===============================================================================
