@@ -1,4 +1,12 @@
 "===============================================================================
+" Hotkeys
+"===============================================================================
+" open/close nerdtree       Enter
+" enable/disable folding    zi
+" open folding              zo / Space
+" close folding             zc
+
+"===============================================================================
 " General
 "===============================================================================
 
@@ -10,10 +18,6 @@ set number
 
 " Auto read when a file is changed from the outside
 set autoread
-
-" Hieght of command bar
-"set cmdheight=2
-
 
 " ????
 set magic
@@ -27,14 +31,37 @@ set shiftwidth=4    " shift width
 set softtabstop=4
 set expandtab
 
-" Set shift width to 4 spaces.
-
 " Hightlight the 80th column
 "high ColorColumn ctermbg=236 guibg=#FFFFFF
 set colorcolumn=80
 
 " Hightlight current line
 set cursorline
+
+" Disable word wrapping
+set wrap!
+
+" Set horizontal scroll
+set sidescroll=4
+
+" Set folding
+function! MyFolding()
+    if &foldenable == 0
+        set foldcolumn=2
+        set foldenable
+    else
+        set foldcolumn=0
+        set nofoldenable
+    endif
+endfunction
+
+set foldmethod=indent
+set foldcolumn=0
+set foldnestmax=2
+set nofoldenable
+
+" 'zi' will inverse foldenable. Reset 'zi' to change foldcolumn as well.
+:nnoremap zi :call MyFolding()<CR>
 
 
 "===============================================================================
@@ -51,23 +78,33 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Use Ctrl-f to start search
+:nnoremap <C-F> /
+
 
 "===============================================================================
 " Vundle Plugins
 "===============================================================================
 
-set nocompatible	" required
+set nocompatible	" requiredgetCNNModel, e
 filetype off		" required
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'	" required
+Plugin 'VundleVim/Vundle.vim'	" required
 
 " Plugin begins here.
 
 " Color themes
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'tomasr/molokai'
+Plugin 'fmoralesc/molokayo'
+Plugin 'rakr/vim-one'
+
+" syntax
+Plugin 'hdima/python-syntax'
 
 " Airline and its color themes
 Plugin 'vim-airline/vim-airline'
@@ -75,19 +112,29 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'powerline/powerline-fonts'
 
 Plugin 'scrooloose/nerdtree'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 
 " Auto complete
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'  " Disabled because it works too slowly when loading tensorflow 
+
+" AutoFormattor
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'  "configure codefmt's maktaba flags. See`:help :Glaive` for usage.
 
 " All of Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
 " To ignore plugin indent changes, instead use:
-" filetype plugin on
+filetype plugin on
 
+" the glaive#Install() should go after the "call vundle#end()"
+call glaive#Install()
+" Optional: Enable codefmt's default mappings on the <Leader>= prefix.
+Glaive codefmt plugin[mappings]
+Glaive codefmt google_java_executable=`expand('java -jar $HOME/.vim/google-java-format-1.7-all-deps.jar')`
 
 " Brief help
 " :PluginList          - list configured plugins
@@ -105,13 +152,19 @@ syntax enable
 set t_Co=256
 set background=dark
 
+
+" Solarized
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans = 1
+"colorscheme solarized
+
 " PaperColor
 let g:PaperColor_Theme_Options = {
-  \   'theme': {
+  \   'theme': { 
   \     'default.dark': {
   \       'transparent_background': 1,
   \       'allow_bold': 1,
-  \       'allow_italic': 1
+  \       'allow_italic': 0
   \     }
   \   },
   \   'language': {
@@ -128,12 +181,28 @@ let g:PaperColor_Theme_Options = {
   \ }
 colorscheme PaperColor
 
+" Molokaic
+"let g:molokai_original = 1
+"colorscheme molokai
+
+" One
+"set termguicolors
+"let g:one_allow_italics = 1 " Enable italic for comments
+"colorscheme one
+
+"set background=dark
+"colorscheme evening
+
 " If there is trouble showing the background color, uncomment following lines.
 "highlight Normal ctermbg=NONE
 "highlight nonText ctermbg=NONE
 
 " Change search highlight color to light yellow
 hi Search ctermbg=227
+" Change the color of folding rows columns
+highlight Folded ctermbg=Black ctermfg=147
+highlight FoldColumn ctermbg=Black ctermfg=147
+
 
 "===============================================================================
 " Airline
@@ -178,3 +247,32 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
 " Disable default mappings
 let g:JavaComplete_EnableDefaultMappings = 0
+
+
+"===============================================================================
+" vim-codefmt Autoformatting
+"===============================================================================
+augroup autoformat_settings
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  "autocmd FileType dart AutoFormatBuffer dartfmt
+  "autocmd FileType go AutoFormatBuffer gofmt
+  "autocmd FileType gn AutoFormatBuffer gn
+  "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType vue AutoFormatBuffer prettier
+augroup END
+
+"===============================================================================
+" jedi Python autocompete
+"===============================================================================
+" Load rope plugin
+let g:pymode_rope = 0
+
+
+"===============================================================================
+" Pyhton Syntax
+"===============================================================================
+let python_highlight_all = 1
