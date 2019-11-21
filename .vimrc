@@ -107,7 +107,7 @@ Plugin 'fmoralesc/molokayo'
 Plugin 'rakr/vim-one'
 
 " syntax
-Plugin 'hdima/python-syntax'
+Plugin 'vim-python/python-syntax'
 
 " Airline and its color themes
 Plugin 'vim-airline/vim-airline'
