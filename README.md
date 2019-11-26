@@ -42,5 +42,6 @@ See the [installation guide](https://github.com/ycm-core/YouCompleteMe#installat
 ### yapf
 Used in python auto formatting.
 ```
-$ python -m pip install yapf
+$ pip install yapf
 ```
+If ```yapf``` is not found after installation, add its directory to the environment path. It is usually installed in ```\usr\local\bin``` or ```~\.local\bin```.
