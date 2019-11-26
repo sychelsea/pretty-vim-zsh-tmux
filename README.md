@@ -23,10 +23,24 @@ Put ```.vimrc``` file in the user's home directory ```~/```
 ## Install Vundle Plugins
 1. Set up Vundle  ```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 2. Use command ```:PluginInstall``` in vim to install Plugins.
-3. Compile ```YouCompleteMe```. Open the directory ```cd ~/.vim/bundle/YouCompleteMe```. Run ```python3 install.py --all```.
-See the [installation guide](https://github.com/ycm-core/YouCompleteMe#installation) for more instructions.
-(All the other Plugins have been Installed by Step 2.)
-
-
 
 See [the guide of Vundle](https://github.com/VundleVim/Vundle.vim#quick-start) for advanced configuration.
+
+## Install Commands for Puglins
+### YouCompleteMe
+```YouCompleteMe``` need to be compiled before use. 
+* Open the directory. 
+  ```
+  $ cd ~/.vim/bundle/YouCompleteMe
+  ```
+* Install ycm for all the languages.
+  ```
+  $ python3 install.py --all
+  ```
+See the [installation guide](https://github.com/ycm-core/YouCompleteMe#installation) for more instructions.
+
+### yapf
+Used in python auto formatting.
+```
+$ python -m pip install yapf
+```
