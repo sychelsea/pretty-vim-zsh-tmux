@@ -8,7 +8,7 @@ It enable the most of basic functions and help you to install some useful Plugin
 # Quick Start
 
 - Put ```.vimrc```, ```.zshrc``` and ```.tmux.conf``` in the user's home directory ```~/```.
-- Put ``sychelsea```` in ```~/.oh-my-zsh/custom/themes/```.
+- Put ```sychelsea.zsh-theme```` in ```~/.oh-my-zsh/custom/themes/```.
 
 # Vim Configuration
 It uses [VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim) to manage vim plugins. 
