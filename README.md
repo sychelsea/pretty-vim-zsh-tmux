@@ -3,7 +3,7 @@
 This reposity contains a lightweight vim+zsh+tmux configuration file, which makes your terminal more friendly and smart.
 It enable the most of basic functions and help you to install some useful Plugins.
 
-![](https://imgur.com/AhgjxHu)
+![preview](https://i.imgur.com/AhgjxHu.png)
 
 # Quick Start
 
