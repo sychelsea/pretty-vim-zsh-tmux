@@ -137,7 +137,10 @@ filetype plugin on
 call glaive#Install()
 " Optional: Enable codefmt's default mappings on the <Leader>= prefix.
 Glaive codefmt plugin[mappings]
-Glaive codefmt google_java_executable=`expand('java -jar $HOME/.vim/google-java-format-1.7-all-deps.jar')`
+" default google code format for java
+"Glaive codefmt google_java_executable=`expand('java -jar $HOME/.vim/google-java-format-1.7-all-deps.jar')` 
+" set tab = 4 in java
+Glaive codefmt google_java_executable=`expand('java -jar $HOME/.vim/google-java-format-1.7-all-deps.jar -a')`
 
 " Brief help
 " :PluginList          - list configured plugins
