@@ -65,4 +65,7 @@ I add som custom hotkeys. Here are the main difference:
 - ```-```: Split the wimdow horizontally
 - ```n```: New tab
 - ```t```: Switch bwtween tabs. You can press ```t``` multiple times continuously. 
-There may be some other custom hotkeys. You can check the comments in '.tmux.config' for more infomation. 
+There may be some other custom hotkeys. You can check the comments in '.tmux.config' for more infomation.
+
+# Fold 
+Use ```zi``` to enable/disable fold
