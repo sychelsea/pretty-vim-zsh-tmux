@@ -67,5 +67,11 @@ I add som custom hotkeys. Here are the main difference:
 - ```t```: Switch bwtween tabs. You can press ```t``` multiple times continuously. 
 There may be some other custom hotkeys. You can check the comments in '.tmux.config' for more infomation.
 
+# Conda ENV
+Anaconda defauly shows its env name at the beginnig of the PROMPT of bash.
+Run this on the terminal to disable it:
+```
+$ conda config --set changeps1 False
+```
 # Fold 
 Use ```zi``` to enable/disable fold
